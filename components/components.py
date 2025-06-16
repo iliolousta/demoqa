@@ -3,9 +3,10 @@ from selenium.common.exceptions import NoSuchElementException
 
 class WebElement:
 
-    def __init__(self, driver, locator=" "):
+    def __init__(self, driver, locator=" ", text=" "):
         self.driver = driver
         self.locator = locator
+        self.text = text
 
     def click(self):
         self.find_element().click()
@@ -19,3 +20,11 @@ class WebElement:
         except NoSuchElementException:
             return False
         return True
+
+    def get_text(self):
+        return str(self.find_element().text)
+
+    def equal_text(self):
+        if self.get_text() == self.text:
+            return True
+        return False
