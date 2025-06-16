@@ -1,7 +1,5 @@
-from selenium.common import NoSuchElementException
 from pages.demoqa import DemoQa
 from pages.elements_page import ElementsPage
-from components.components import WebElement
 
 def test_check_test(browser):
     demo_qa_page = DemoQa(browser)
