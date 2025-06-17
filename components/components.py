@@ -28,3 +28,6 @@ class WebElement:
         if self.get_text() == self.text:
             return True
         return False
+
+    def visible(self):
+        return self.find_element().is_displayed()
